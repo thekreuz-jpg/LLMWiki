@@ -46,42 +46,66 @@ def parse_frontmatter(content):
     fm_text = content[3:end].strip()
     fm = {}
     
-    for line in fm_text.split("\n"):
-        line = line.strip()
-        if not line or line.startswith("#"):
-            continue
-        if ":" not in line:
+    lines = fm_text.split("\n")
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            i += 1
             continue
         
-        key, _, value = line.partition(":")
-        key = key.strip()
-        value = value.strip()
-        
-        # Handle list values
-        if value.startswith("[") and value.endswith("]"):
-            inner = value[1:-1].strip()
-            if not inner:
-                fm[key] = []
+        # Check if this is a key with a list value on subsequent lines
+        if ":" in stripped and not stripped.startswith("-"):
+            key, _, value = stripped.partition(":")
+            key = key.strip()
+            value = value.strip()
+            
+            # If value is empty, check if next lines are list items
+            if not value and i + 1 < len(lines):
+                next_line = lines[i + 1].strip()
+                if next_line.startswith("-"):
+                    # Multi-line list
+                    lst = []
+                    i += 1
+                    while i < len(lines):
+                        line = lines[i].strip()
+                        if line.startswith("-"):
+                            item = line[1:].strip().strip('"').strip("'")
+                            if item:
+                                lst.append(item)
+                            i += 1
+                        else:
+                            break
+                    fm[key] = lst
+                    continue
+            
+            # Handle inline list values
+            if value.startswith("[") and value.endswith("]"):
+                inner = value[1:-1].strip()
+                if not inner:
+                    fm[key] = []
+                else:
+                    items = []
+                    for item in inner.split(","):
+                        item = item.strip().strip('"').strip("'")
+                        if item:
+                            items.append(item)
+                    fm[key] = items
+            # Handle quoted strings
+            elif (value.startswith('"') and value.endswith('"')) or (value.startswith("'") and value.endswith("'")):
+                fm[key] = value[1:-1]
+            # Handle booleans
+            elif value.lower() == "true":
+                fm[key] = True
+            elif value.lower() == "false":
+                fm[key] = False
+            # Handle numbers
+            elif value.isdigit():
+                fm[key] = int(value)
             else:
-                items = []
-                for item in inner.split(","):
-                    item = item.strip().strip('"').strip("'")
-                    if item:
-                        items.append(item)
-                fm[key] = items
-        # Handle quoted strings
-        elif (value.startswith('"') and value.endswith('"')) or (value.startswith("'") and value.endswith("'")):
-            fm[key] = value[1:-1]
-        # Handle booleans
-        elif value.lower() == "true":
-            fm[key] = True
-        elif value.lower() == "false":
-            fm[key] = False
-        # Handle numbers
-        elif value.isdigit():
-            fm[key] = int(value)
-        else:
-            fm[key] = value
+                fm[key] = value
+        i += 1
     
     return fm
 
@@ -269,6 +293,9 @@ def cmd_lint(vault_root):
         if not wiki_path.exists():
             continue
         for note_path in sorted(wiki_path.glob("*.md")):
+            # Skip generated index files and log.md — they are build artifacts
+            if note_path.name in ("index.md", "log.md"):
+                continue
             fm, _ = read_note(note_path)
             rel_path = str(note_path.relative_to(vault_root)).replace("\\", "/")
             
