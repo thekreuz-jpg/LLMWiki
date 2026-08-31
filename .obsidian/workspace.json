@@ -4,30 +4,8 @@
     "type": "split",
     "children": [
       {
-        "id": "8aea63d96854f8d7",
-        "type": "tabs",
-        "dimension": 75.5278310940499,
-        "children": [
-          {
-            "id": "d014e6cac8c89b98",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Welcome.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Welcome"
-            }
-          }
-        ]
-      },
-      {
         "id": "341c96a032aea6d6",
         "type": "tabs",
-        "dimension": 24.47216890595009,
         "children": [
           {
             "id": "10d55b87d67e26d4",
@@ -35,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Welcome.md",
+                "file": "Schema/lint-checklist.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Welcome"
+              "title": "lint-checklist"
             }
           }
         ]
@@ -209,30 +187,35 @@
   },
   "active": "10d55b87d67e26d4",
   "lastOpenFiles": [
-    "Hermes_Skills/note-taking/obsidian-vault-git/references/obsidian-cli-setup.md",
+    "Schema/frontmatter-schema.md",
+    "AGENTS.md",
+    "Schema/workflow-examples.md",
+    "Schema/lint-checklist.md",
+    "Schema/naming-conventions.md",
     "Welcome.md",
+    "tutorial",
+    "scripts",
+    "_templates",
+    "Schema",
+    "Wiki/Topics",
+    "Wiki/Projects",
+    "Wiki/Logs",
+    "Wiki/Entities",
+    "Wiki/Concepts",
+    "Wiki",
+    "Hermes_Skills/note-taking/obsidian-vault-git/references/obsidian-cli-setup.md",
     "Hermes_Skills/obsidian-canvas-creator/references/layout-algorithms.md",
     "Hermes_Skills/obsidian-canvas-creator/references/canvas-spec.md",
     "Hermes_Skills/obsidian-canvas-creator/SKILL.md",
-    "Hermes_Skills/obsidian-canvas-creator/references",
-    "Hermes_Skills/obsidian-canvas-creator",
     "Hermes_Skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md",
     "Hermes_Skills/obsidian-bases/SKILL.md",
-    "Hermes_Skills/obsidian-bases/references",
-    "Hermes_Skills/obsidian-bases",
     "Hermes_Skills/obsidian-markdown/references/PROPERTIES.md",
     "Hermes_Skills/obsidian-markdown/references/EMBEDS.md",
     "Hermes_Skills/obsidian-markdown/references/CALLOUTS.md",
     "Hermes_Skills/obsidian-markdown/SKILL.md",
-    "Hermes_Skills/obsidian-markdown/references",
-    "Hermes_Skills/obsidian-markdown",
     "Hermes_Skills/obsidian-cli/SKILL.md",
-    "Hermes_Skills/obsidian-cli",
     "Hermes_Skills/note-taking/obsidian-vault-git/references/obsidian-gitignore.md",
-    "Hermes_Skills/note-taking/obsidian-vault-git/references",
     "Hermes_Skills/note-taking/obsidian-vault-git/SKILL.md",
-    "Hermes_Skills/note-taking/obsidian-vault-git",
-    "Hermes_Skills/remotion-to-hyperframes/assets/test-corpus/tier-3-data-driven/remotion-src/src/components/AnimatedNumber.tsx",
     "Hermes_Skills/music-to-video/references/templates/held-text-strobe-burst/assets/texture-mask-text/masks/tiles-138.png",
     "Hermes_Skills/music-to-video/references/templates/held-text-strobe-burst/assets/texture-mask-text/masks/wood-floor-070.png",
     "Hermes_Skills/music-to-video/references/templates/held-text-strobe-burst/assets/texture-mask-text/masks/wood.png",
@@ -249,11 +232,6 @@
     "Hermes_Skills/research/research-paper-writing/templates/colm2025/README.md",
     "Hermes_Skills/research/research-paper-writing/templates/acl/README.md",
     "Hermes_Skills/research/research-paper-writing/templates/acl/formatting.md",
-    "Hermes_Skills/research/research-paper-writing/templates/aaai2026/README.md",
-    "Hermes_Skills/remotion-to-hyperframes/assets/test-corpus/tier-4-escape-hatch/README.md",
-    "Hermes_Skills/remotion-to-hyperframes/assets/test-corpus/tier-3-data-driven/README.md",
-    "Hermes_Skills/remotion-to-hyperframes/assets/test-corpus/tier-2-multi-scene/README.md",
-    "Hermes_Skills/remotion-to-hyperframes/assets/test-corpus/tier-1-title-card/README.md",
-    "Hermes_Skills/music-to-video/references/motion-primitives/text-spectral-rays/USAGE.md"
+    "Hermes_Skills/research/research-paper-writing/templates/aaai2026/README.md"
   ]
 }
