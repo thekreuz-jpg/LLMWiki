@@ -1,0 +1,16 @@
+# Obsidian workspace cache
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/cache
+.obsidian/graph.json
+.obsidian/plugins/obsidian-git/data.json
+
+# OS noise
+Thumbs.db
+.DS_Store
+*.log
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
