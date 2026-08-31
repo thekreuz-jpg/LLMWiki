@@ -1,6 +1,6 @@
 # LLM Wiki Agent Rules
 
-This file governs how AI agents interact with this LLM Wiki vault.
+This file governs how AI agents interact with this LLM Wiki vault.  This repository is a starter LLM Wiki for humans and agents.
 
 ## Vault Structure
 
@@ -11,14 +11,36 @@ This file governs how AI agents interact with this LLM Wiki vault.
 - **`.agents/skills/`** — Agent skills for ingesting, querying, linting, and maintaining the Wiki.
 - **`scripts/`** — Deterministic tooling (`wiki_tool.py`, hooks, audit).
 
+Default workflow:
+	1. Add source material to raw/sources/
+	2. compile short reusable notes in Wiki/
+	3. Rebuild indexes and wiki/catalog.jsonl
+	4. run lint and source checks
+	5. append wiki/log.md
+
+Use scripts/wiki_tool.py as the canonical repo-local maintenance tool for build, lint, source scan, source delta, source coverage, catalog search, and log commands.
+
+Default write locations:
+- Topic hubs: wiki/Topics/
+- Concepts: Wiki/Concepts/
+- Entities: Wiki/Entities
+- Projects: Wiki/Projects/
+- Logs: Wiki/Logs/
+	
 ## Agent Obligations
 
-1. **Treat `Raw/Sources/` as source material, not as compiled notes.** Raw sources are inputs to be processed, not final knowledge.
+1. **Treat `Raw/Sources/` as source material, not as compiled notes.** Raw sources are inputs to be processed, not final knowledge, source-faithful.
 2. **Write reusable knowledge only under `Wiki/`**. Never write compiled notes directly into `Raw/`.
-3. **Keep every compiled note linked to one or more Raw sources.** Every claim in a Wiki note must be traceable back to a source in `Raw/Sources/`.
-4. **Search `Wiki/catalog.jsonl` before opening broad Raw context.** The catalog is the entry point — use it to find relevant compiled notes first.
-5. **Run `build`, `lint`, and source checks before commits.** The maintenance gate must pass before any meaningful commit.
-6. **Do not invent citations or create unsupported claims.** If a claim can't be traced to a source, don't make it.
+3. Do not overwrite Raw source content during compilation.
+4. **Keep every compiled note linked to one or more Raw sources.** Every claim in a Wiki note must be traceable back to a source in `Raw/Sources/`.
+5. **Search `Wiki/catalog.jsonl` before opening broad Raw context.** The catalog is the entry point — use it to find relevant compiled notes first.
+6. **Run `build`, `lint`, and source checks before commits.** The maintenance gate must pass before any meaningful commit.
+7. **Do not invent citations or create unsupported claims.** If a claim can't be traced to a source, don't make it.
+8. Use plain tags only
+9. Use topics and sources frontmatter on compiled Wiki notes.
+10. Treat source_count as derived
+11. Keep compiled notes short, single-purpose, and source-traceable.
+12. Query from Wiki/index.md and Wiki/catalog.jsonl before opening broad context
 
 ## Maintenance Gate
 

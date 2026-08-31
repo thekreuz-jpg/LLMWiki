@@ -1,0 +1,20 @@
+#!/bin/bash
+# pre-commit hook — run maintenance gate before commits
+
+set -e
+
+VAULT_ROOT="$(git rev-parse --show-toplevel)"
+cd "$VAULT_ROOT"
+
+echo "=== Running pre-commit maintenance gate ==="
+
+echo "→ wiki_tool.py build"
+python3 scripts/wiki_tool.py build
+
+echo "→ wiki_tool.py lint"
+python3 scripts/wiki_tool.py lint
+
+echo "→ wiki_tool.py source-lint"
+python3 scripts/wiki_tool.py source-lint
+
+echo "=== Maintenance gate passed ==="

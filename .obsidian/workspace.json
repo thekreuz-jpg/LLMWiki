@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AGENTS.md",
+                "file": "Schema/lint-checklist.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AGENTS"
+              "title": "lint-checklist"
             }
           }
         ]
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AGENTS.md",
+                "file": "Schema/lint-checklist.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -188,6 +188,17 @@
   },
   "active": "10d55b87d67e26d4",
   "lastOpenFiles": [
+    "Wiki/Logs/log.md",
+    "Wiki/index.md",
+    "Wiki/catalog.jsonl",
+    "scripts/install_hooks.sh",
+    "scripts/audit_public.py",
+    "Schema/command-reference.md",
+    "scripts/wiki_tool.py",
+    "Schema/workflow-examples.md",
+    "Schema/frontmatter-schema.md",
+    "AGENTS.md",
+    "Welcome.md",
     "_templates/project-note.md",
     "_templates/source-note.md",
     "_templates/log-note.md",
@@ -195,21 +206,13 @@
     "_templates/entity-note.md",
     "_templates/topic-note.md",
     "Schema/lint-checklist.md",
-    "Schema/frontmatter-schema.md",
-    "AGENTS.md",
-    "Schema/workflow-examples.md",
     "Schema/naming-conventions.md",
-    "Welcome.md",
     "tutorial",
     "scripts",
     "_templates",
     "Schema",
     "Wiki/Topics",
     "Wiki/Projects",
-    "Wiki/Logs",
-    "Wiki/Entities",
-    "Wiki/Concepts",
-    "Wiki",
     "Hermes_Skills/note-taking/obsidian-vault-git/references/obsidian-cli-setup.md",
     "Hermes_Skills/obsidian-canvas-creator/references/layout-algorithms.md",
     "Hermes_Skills/obsidian-canvas-creator/references/canvas-spec.md",
@@ -221,8 +224,6 @@
     "Hermes_Skills/obsidian-markdown/references/CALLOUTS.md",
     "Hermes_Skills/obsidian-markdown/SKILL.md",
     "Hermes_Skills/obsidian-cli/SKILL.md",
-    "Hermes_Skills/note-taking/obsidian-vault-git/references/obsidian-gitignore.md",
-    "Hermes_Skills/note-taking/obsidian-vault-git/SKILL.md",
     "Hermes_Skills/music-to-video/references/templates/held-text-strobe-burst/assets/texture-mask-text/masks/tiles-138.png",
     "Hermes_Skills/music-to-video/references/templates/held-text-strobe-burst/assets/texture-mask-text/masks/wood-floor-070.png",
     "Hermes_Skills/music-to-video/references/templates/held-text-strobe-burst/assets/texture-mask-text/masks/wood.png",
@@ -232,7 +233,6 @@
     "Hermes_Skills/music-to-video/references/templates/held-text-strobe-burst/assets/texture-mask-text/masks/wood-092.png",
     "Hermes_Skills/music-to-video/references/templates/held-text-strobe-burst/assets/texture-mask-text/masks/wood-058.png",
     "Hermes_Skills/music-to-video/references/templates/held-text-strobe-burst/assets/texture-mask-text/masks/wood-066.png",
-    "Hermes_Skills/music-to-video/references/templates/held-text-strobe-burst/assets/texture-mask-text/masks/travertine-009.png",
-    "Hermes_Skills/embedded-captions/modes/cinematic/_archive/portrait-header/spec.md"
+    "Hermes_Skills/music-to-video/references/templates/held-text-strobe-burst/assets/texture-mask-text/masks/travertine-009.png"
   ]
 }

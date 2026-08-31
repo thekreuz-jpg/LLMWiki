@@ -28,18 +28,20 @@ tags:
 | `Processed` | boolean | yes | Whether this source has been compiled into Wiki notes |
 | `tags` | list | yes | Must include `"source"` |
 
-## Compiled Wiki Notes (`Wiki/`)
+## Compiled Wiki Notes (`Wiki/`) use this frontmatter
 
 ```yaml
 ---
 tags:
   - "concept"
-topics: []
-status: seed
+topics:
+ - "[[AI]]
+status: active
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
-sources: []
-source_count: 0
+sources:
+ - "[[Raw/Sources/example-source]]"
+source_count: 1
 aliases: []
 ---
 ```
@@ -64,3 +66,10 @@ aliases: []
 - `entity`
 - `project`
 - `log`
+
+Naming Conventions
+Use stable, simple filenames.
+- prefer lowercase kebab-case for compiles notes.
+- keep display names in note heading and aliases
+- topic notes may use title case when that is clearer in Obsidian
+- Raw source filenames should be descriptive enough to identify the source
